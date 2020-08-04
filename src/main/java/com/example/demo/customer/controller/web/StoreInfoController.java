@@ -37,7 +37,7 @@ public class StoreInfoController {
 	@GetMapping(value="/store/info/{storeId}")
 	public ResponseEntity<Object> getOneStore(@PathVariable String storeId)
 	{
-		return new ResponseEntity<>(new ResponseDTO(storeInfoService.getOneStore(storeId)), HttpStatus.OK);
+		return new ResponseEntity<>(storeInfoService.getOneStore(storeId), HttpStatus.OK);
 	}
 	
 	@ApiOperation(value = "가게 정보 추가", httpMethod="POST", notes="가게 정보 추가 API")

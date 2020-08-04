@@ -34,7 +34,7 @@ public class Store
 	String openinfo;
 	String phonenumber;
 	String storecode;		//1.한식 2.중식 3.일식 4.기타
-	int earinigs; 	//월 수익
+	int earnings; 	//월 수익
 	
 	
 	@Builder
@@ -47,7 +47,7 @@ public class Store
 		this.address = address;
 		this.phonenumber = phonenumber;
 		this.storecode = storecode;
-		this.earinigs = earnings;
+		this.earnings = earnings;
 	}
 	
 	public void update(StoreRequestDTO storeRequestDTO)
@@ -59,7 +59,7 @@ public class Store
 		this.address = storeRequestDTO.getAddress();
 		this.phonenumber = storeRequestDTO.getPhonenumber();
 		this.storecode = storeRequestDTO.getStorecode();
-		this.earinigs = storeRequestDTO.getEarnings();
+		this.earnings = storeRequestDTO.getEarnings();
 
 	}
 }
