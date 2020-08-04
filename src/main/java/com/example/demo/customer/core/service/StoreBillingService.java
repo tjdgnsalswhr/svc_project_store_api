@@ -1,0 +1,44 @@
+package com.example.demo.customer.core.service;
+
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.customer.core.application.object.command.StoreRequestDTO;
+import com.example.demo.customer.core.entity.Store;
+import com.example.demo.customer.core.port_infra.persistent.StoreRepository;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+@RequiredArgsConstructor
+@Transactional
+public class StoreBillingService {
+	
+	@Autowired
+	private final StoreRepository storeRepository;
+	private final ModelMapper modelMapper;
+	
+	public void updateEarnings(String storeid, int money)
+	{
+		Optional<Store> optionalStore = storeRepository.findById(storeid);
+		Store store = optionalStore.get();
+		
+		StoreRequestDTO storeRequestDTO = modelMapper.map(optionalStore.get(), StoreRequestDTO.class);
+		int earnings = storeRequestDTO.getEarnings();
+		earnings = earnings + money;
+		storeRequestDTO.setEarnings(earnings);
+		
+		store.update(storeRequestDTO);
+		
+	}
+	
+	
+
+}
