@@ -1,4 +1,4 @@
-package com.example.demo.customer.core.application.object.query;
+package com.example.demo.store.core.application.object.query;
 
 import java.util.ArrayList;
 import java.util.List;

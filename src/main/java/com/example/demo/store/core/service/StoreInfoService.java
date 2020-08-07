@@ -1,4 +1,4 @@
-package com.example.demo.customer.core.service;
+package com.example.demo.store.core.service;
 
 import java.util.List;
 
@@ -10,12 +10,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.common.error.exception.BusinessException;
-import com.example.demo.customer.core.application.object.command.StoreRequestDTO;
-import com.example.demo.customer.core.application.object.query.StoreResponseDTO;
-
-import com.example.demo.customer.core.entity.Store;
-
-import com.example.demo.customer.core.port_infra.persistent.StoreRepository;
+import com.example.demo.store.core.application.object.command.StoreRequestDTO;
+import com.example.demo.store.core.application.object.query.StoreResponseDTO;
+import com.example.demo.store.core.entity.Store;
+import com.example.demo.store.core.port_infra.persistent.StoreRepository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

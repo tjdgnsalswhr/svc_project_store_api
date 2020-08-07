@@ -1,4 +1,4 @@
-package com.example.demo.customer.controller.web;
+package com.example.demo.store.controller.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.customer.core.application.object.command.StoreRequestDTO;
-import com.example.demo.customer.core.application.object.query.ResponseDTO;
-import com.example.demo.customer.core.service.StoreInfoService;
+import com.example.demo.store.core.application.object.command.StoreRequestDTO;
+import com.example.demo.store.core.application.object.query.ResponseDTO;
+import com.example.demo.store.core.service.StoreInfoService;
 
 import io.swagger.annotations.ApiOperation;
 

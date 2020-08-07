@@ -1,4 +1,4 @@
-package com.example.demo.customer.core.application.object.command;
+package com.example.demo.store.core.application.object.command;
 
 import java.util.Date;
 

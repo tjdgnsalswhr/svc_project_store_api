@@ -1,4 +1,4 @@
-package com.example.demo.customer.core.application.object.query;
+package com.example.demo.store.core.application.object.query;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

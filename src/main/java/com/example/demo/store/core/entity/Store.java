@@ -1,10 +1,10 @@
-package com.example.demo.customer.core.entity;
+package com.example.demo.store.core.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.example.demo.customer.core.application.object.command.StoreRequestDTO;
+import com.example.demo.store.core.application.object.command.StoreRequestDTO;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;

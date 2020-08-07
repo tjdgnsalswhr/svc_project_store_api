@@ -1,4 +1,4 @@
-package com.example.demo.customer.controller.web;
+package com.example.demo.store.controller.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.customer.core.service.StoreBillingService;
+import com.example.demo.store.core.service.StoreBillingService;
 
 import io.swagger.annotations.ApiOperation;
 

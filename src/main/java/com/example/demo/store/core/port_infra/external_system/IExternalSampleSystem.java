@@ -1,9 +1,9 @@
-package com.example.demo.customer.core.port_infra.external_system;
+package com.example.demo.store.core.port_infra.external_system;
 
 
 import org.springframework.http.ResponseEntity;
 
-import com.example.demo.customer.core.application.object.command.SampleDomainCommandApiRequestDTO;
+import com.example.demo.store.core.application.object.command.SampleDomainCommandApiRequestDTO;
 
 public interface IExternalSampleSystem {
 

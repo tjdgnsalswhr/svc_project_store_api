@@ -1,4 +1,4 @@
-package com.example.demo.customer.core.entity;
+package com.example.demo.store.core.entity;
 
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
