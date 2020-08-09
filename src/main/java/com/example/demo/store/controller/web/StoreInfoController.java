@@ -1,5 +1,7 @@
 package com.example.demo.store.controller.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.store.core.application.object.command.StoreRequestDTO;
 import com.example.demo.store.core.application.object.query.ResponseDTO;
+import com.example.demo.store.core.application.object.query.StoreResponseDTO;
+import com.example.demo.store.core.entity.Store;
 import com.example.demo.store.core.service.StoreInfoService;
 
 import io.swagger.annotations.ApiOperation;
@@ -27,7 +31,7 @@ public class StoreInfoController {
 	
 	@ApiOperation(value="전체 가게 정보 조회", httpMethod = "GET", notes="전체 가게 정보 조회 API.")
 	@GetMapping(value="/store/info/all")
-	public ResponseEntity<Object> getAllStore()
+	public ResponseEntity<List<Store>> getAllStore()
 	{
 		return new ResponseEntity<>(storeInfoService.getAllStoreList(),HttpStatus.OK);
 	}
@@ -35,7 +39,7 @@ public class StoreInfoController {
 	
 	@ApiOperation(value = "가게 정보 조회", httpMethod="GET", notes="가게 정보 조회 API.")
 	@GetMapping(value="/store/info/{storeId}")
-	public ResponseEntity<Object> getOneStore(@PathVariable String storeId)
+	public ResponseEntity<StoreResponseDTO> getOneStore(@PathVariable String storeId)
 	{
 		return new ResponseEntity<>(storeInfoService.getOneStore(storeId), HttpStatus.OK);
 	}
