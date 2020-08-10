@@ -2,10 +2,12 @@ package com.example.demo.store.controller.web;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +24,8 @@ import com.example.demo.store.core.service.StoreInfoService;
 
 import io.swagger.annotations.ApiOperation;
 
+
+@CrossOrigin("*")
 @RestController
 public class StoreInfoController {
 	
@@ -30,7 +34,7 @@ public class StoreInfoController {
 	
 	
 	@ApiOperation(value="전체 가게 정보 조회", httpMethod = "GET", notes="전체 가게 정보 조회 API.")
-	@GetMapping(value="/store/info/all")
+	@GetMapping(value="/store/info/all", produces="application/json; charset=utf8")
 	public ResponseEntity<List<Store>> getAllStore()
 	{
 		return new ResponseEntity<>(storeInfoService.getAllStoreList(),HttpStatus.OK);
@@ -38,7 +42,7 @@ public class StoreInfoController {
 	
 	
 	@ApiOperation(value = "가게 정보 조회", httpMethod="GET", notes="가게 정보 조회 API.")
-	@GetMapping(value="/store/info/{storeId}")
+	@GetMapping(value="/store/info/{storeId}", produces="application/json; charset=utf8")
 	public ResponseEntity<StoreResponseDTO> getOneStore(@PathVariable String storeId)
 	{
 		return new ResponseEntity<>(storeInfoService.getOneStore(storeId), HttpStatus.OK);

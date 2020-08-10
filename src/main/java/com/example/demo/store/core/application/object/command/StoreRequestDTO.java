@@ -39,7 +39,7 @@ public class StoreRequestDTO {
 	String phonenumber; //가게 전화번호
 	
 	@ApiModelProperty(example = "1")
-	String storecode; 		//음식 종류
+	int storecode; 		//음식 종류
 	
 	@ApiModelProperty(example = "1000000")
 	int earnings; 	//월 수익

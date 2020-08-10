@@ -23,7 +23,7 @@ public class StoreResponseDTO {
 	String address;		//가게 주소
 	String openinfo;
 	String phonenumber;
-	String storecode;		//1.한식 2.중식 3.일식 4.기타
+	int storecode;		//1.한식 2.중식 3.일식 4.기타
 	int earinigs; 	//월 수익
 
 }

@@ -33,12 +33,12 @@ public class Store
 	String address;		//가게 주소
 	String openinfo;
 	String phonenumber;
-	String storecode;		//1.한식 2.중식 3.일식 4.기타
+	int storecode;		//1.한식 2.중식 3.일식 4.기타
 	int earnings; 	//월 수익
 	
 	
 	@Builder
-	public Store(String sid, String storename, String ownername, String ownerid, String address, String phonenumber, String storecode, int earnings)
+	public Store(String sid, String storename, String ownername, String ownerid, String address, String phonenumber, int storecode, int earnings)
 	{
 		this.sid = sid;
 		this.storename = storename;
