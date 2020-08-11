@@ -42,6 +42,18 @@ public class StoreInfoService {
 			return null;
 	}
 	
+	public StoreResponseDTO getOneStoreByOwnerId(String owid)
+	{
+		Optional<Store> optionalStore = storeRepository.findByOwnerid(owid);
+		if(optionalStore.isPresent())
+		{
+			return modelMapper.map(optionalStore.get(), StoreResponseDTO.class);
+		}
+		else
+			return null;
+	}
+	
+	
 	public void insertStore(StoreRequestDTO storeRequestDTO)
 	{
 		Store store = modelMapper.map(storeRequestDTO, Store.class);

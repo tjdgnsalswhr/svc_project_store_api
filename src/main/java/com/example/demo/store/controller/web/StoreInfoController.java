@@ -23,8 +23,10 @@ import com.example.demo.store.core.entity.Store;
 import com.example.demo.store.core.service.StoreInfoService;
 
 import io.swagger.annotations.ApiOperation;
+import lombok.ToString;
 
 
+@ToString
 @CrossOrigin("*")
 @RestController
 public class StoreInfoController {
@@ -40,12 +42,18 @@ public class StoreInfoController {
 		return new ResponseEntity<>(storeInfoService.getAllStoreList(),HttpStatus.OK);
 	}
 	
-	
 	@ApiOperation(value = "가게 정보 조회", httpMethod="GET", notes="가게 정보 조회 API.")
-	@GetMapping(value="/store/info/{storeId}", produces="application/json; charset=utf8")
+	@GetMapping(value="/store/info/bystoreid/{storeId}")
 	public ResponseEntity<StoreResponseDTO> getOneStore(@PathVariable String storeId)
 	{
 		return new ResponseEntity<>(storeInfoService.getOneStore(storeId), HttpStatus.OK);
+	}
+	
+	@ApiOperation(value = "점주id 가게 정보 조회", httpMethod="GET", notes="점주 id 가게 정보 조회 API.")
+	@GetMapping(value="/store/info/byowner/{owid}")
+	public ResponseEntity<StoreResponseDTO> getOneStoreByOwnerId(@PathVariable String owid)
+	{
+		return new ResponseEntity<>(storeInfoService.getOneStoreByOwnerId(owid), HttpStatus.OK);
 	}
 	
 	@ApiOperation(value = "가게 정보 추가", httpMethod="POST", notes="가게 정보 추가 API")
