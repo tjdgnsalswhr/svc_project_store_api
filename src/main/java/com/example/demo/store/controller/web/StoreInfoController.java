@@ -36,7 +36,7 @@ public class StoreInfoController {
 	
 	
 	@ApiOperation(value="전체 가게 정보 조회", httpMethod = "GET", notes="전체 가게 정보 조회 API.")
-	@GetMapping(value="/store/info/all", produces="application/json; charset=utf8")
+	@GetMapping(value="/store/info/all")
 	public ResponseEntity<List<Store>> getAllStore()
 	{
 		return new ResponseEntity<>(storeInfoService.getAllStoreList(),HttpStatus.OK);
@@ -81,7 +81,7 @@ public class StoreInfoController {
 	}
 	
 	@ApiOperation(value="음식별 가게 정보 조회", httpMethod = "GET", notes="음식별 가게 정보 조회 API.")
-	@GetMapping(value="/store/info/type/{storecode}")
+	@GetMapping(value="/store/info/type/{storecode}", produces="application/json;charset=UTF-8")
 	public ResponseEntity<Object> getTypeStore(@PathVariable String storecode)
 	{
 		return new ResponseEntity<>(storeInfoService.getTypeStore(storecode),HttpStatus.OK);
