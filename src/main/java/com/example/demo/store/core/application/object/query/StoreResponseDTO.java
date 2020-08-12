@@ -25,5 +25,6 @@ public class StoreResponseDTO {
 	String phonenumber;
 	int storecode;		//1.한식 2.중식 3.일식 4.기타
 	int earnings; 	//월 수익
+	String imgurl;
 
 }

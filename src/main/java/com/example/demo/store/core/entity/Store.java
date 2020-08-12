@@ -35,10 +35,11 @@ public class Store
 	String phonenumber;
 	int storecode;		//1.한식 2.중식 3.일식 4.기타
 	int earnings; 	//월 수익
+	String imgurl;
 	
 	
 	@Builder
-	public Store(String sid, String storename, String ownername, String ownerid, String address, String phonenumber, int storecode, int earnings)
+	public Store(String sid, String storename, String ownername, String ownerid, String address, String phonenumber, int storecode, int earnings, String imgurl)
 	{
 		this.sid = sid;
 		this.storename = storename;
@@ -48,6 +49,7 @@ public class Store
 		this.phonenumber = phonenumber;
 		this.storecode = storecode;
 		this.earnings = earnings;
+		this.imgurl = imgurl;
 	}
 	
 	public void update(StoreRequestDTO storeRequestDTO)
@@ -60,6 +62,6 @@ public class Store
 		this.phonenumber = storeRequestDTO.getPhonenumber();
 		this.storecode = storeRequestDTO.getStorecode();
 		this.earnings = storeRequestDTO.getEarnings();
-
+		this.imgurl = storeRequestDTO.getImgurl();
 	}
 }

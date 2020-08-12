@@ -43,4 +43,7 @@ public class StoreRequestDTO {
 	
 	@ApiModelProperty(example = "1000000")
 	int earnings; 	//월 수익
+	
+	@ApiModelProperty(example = "..")
+	String imgurl; 	//월 수익
 }

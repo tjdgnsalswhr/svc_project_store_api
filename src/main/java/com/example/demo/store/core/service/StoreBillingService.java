@@ -3,6 +3,7 @@ package com.example.demo.store.core.service;
 import java.util.Optional;
 
 
+
 import javax.transaction.Transactional;
 
 import org.modelmapper.ModelMapper;
@@ -22,19 +23,18 @@ import lombok.extern.slf4j.Slf4j;
 @Transactional
 public class StoreBillingService {
 	
-	@Autowired
+
 	private final StoreRepository storeRepository;
 	private final ModelMapper modelMapper;
 	
 	public void updateEarnings(String storeid, int money)
 	{
-		Optional<Store> optionalStore = storeRepository.findById(storeid);
+		Optional<Store> optionalStore = storeRepository.findBySid(storeid);
 		Store store = optionalStore.get();
 		
 		StoreRequestDTO storeRequestDTO = modelMapper.map(optionalStore.get(), StoreRequestDTO.class);
-		int earnings = storeRequestDTO.getEarnings();
-		earnings = earnings + money;
-		storeRequestDTO.setEarnings(earnings);
+		int plus = storeRequestDTO.getEarnings() + money;
+		storeRequestDTO.setEarnings(plus);
 		
 		store.update(storeRequestDTO);
 		
