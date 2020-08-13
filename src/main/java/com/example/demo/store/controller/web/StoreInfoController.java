@@ -36,7 +36,7 @@ public class StoreInfoController {
 	
 	
 	@ApiOperation(value="전체 가게 정보 조회", httpMethod = "GET", notes="전체 가게 정보 조회 API.")
-	@GetMapping(value="/store/info/all")
+	@GetMapping(value="/store/info/all", produces="application/json; charset=utf8")
 	public ResponseEntity<List<Store>> getAllStore()
 	{
 		return new ResponseEntity<>(storeInfoService.getAllStoreList(),HttpStatus.OK);
